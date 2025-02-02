@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+
+body{
+    background-color: hsl(185, 41%, 84%);
+    font-family: "Space Mono", serif;
+    font-weight: 700;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.strong-cyan-bg{
+    background-color:  hsl(172, 67%, 45%);
+}
+
+.very-dark-cyan-bg{
+    background-color: hsl(183, 100%, 15%);
+}
+
+.dark-grayish-cyan-bg{
+    background-color :hsl(184, 14%, 43%);
+}
+
+.grayish-cyan-bg{
+    background-color: hsl(184, 14%, 56%);
+}
+
+.light-grayish-cyan-bg{
+    background-color: hsl(185, 41%, 84%);
+}
+
+.very-light-grayish-cyan-bg{
+    background-color: hsl(189, 41%, 97%);
+}
+
+.strong-cyan{
+    color:  hsl(172, 67%, 45%);
+}
+
+.very-dark-cyan{
+    color: hsl(183, 100%, 15%);
+}
+
+.dark-grayish-cyan{
+    color :hsl(184, 14%, 43%);
+}
+
+.grayish-cyan{
+    color: hsl(184, 14%, 56%);
+}
+
+.light-grayish-cyan{
+    color: hsl(185, 41%, 84%);
+}
+
+.very-light-grayish-cyan{
+    color: hsl(189, 41%, 97%);
+}
+
+button:hover{
+    background-color: hsl(185, 41%, 84%);
+    color:  hsl(183, 100%, 15%);
+    font-weight: bold;
+}
+
+button:active{
+    background-color:  hsl(172, 67%, 45%);
+    color:  hsl(183, 100%, 15%);
+    font-weight: bold;
+}
+
+input:focus{
+    outline: none;
+    border: 2px solid hsl(172, 67%, 45%);
+    border-radius: 10px;
+}
+
+.input-error{
+    outline: none;
+    border: 2px solid red;
+    border-radius: 10px;
+}

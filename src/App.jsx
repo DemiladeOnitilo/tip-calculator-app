@@ -7,7 +7,8 @@ const App = () => {
 
   const [calculated, setCalculated] = useState({
     tipAmount: 0.00,
-    totalAmount: 0.00
+    totalAmount: 0.00,
+    totalOverall: 0.00
   })
 
   

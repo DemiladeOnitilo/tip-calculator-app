@@ -14,54 +14,51 @@ const Calculator = ({setCalculated}) => {
     const [billError, setBillError] = useState("")
     const [peopleError, setPeopleError] = useState("")
     
-    function calculate (tipAmount ,totalAmount) {
+    function calculate (tipAmount ,totalAmount, totalOverall) {
         setCalculated({
             tipAmount,
             totalAmount,
+            totalOverall
         })
     }
 
-      function handleSubmit(){
-        let tip = tipRate * bill
-        if (customValue > 0) {
-            let customVal = customValue/100
-            tip = customVal * bill
-        } 
-        let total =  bill
-        
-        if (numberOfPeople > 0) {
-            tip = tip / numberOfPeople
-            total = total / numberOfPeople
-        } else {
-            tip= '0'
-            total= '0'
+    function handleSubmit() {
+        let billAmount = parseFloat(bill);
+        let peopleCount = parseInt(numberOfPeople);
+    
+        // 🔥 Stop calculations if bill or number of people is empty/zero
+        if (!billAmount || !peopleCount) {
+            setCalculated({ tipAmount: 0, totalAmount: 0, totalOverall: 0 });
+            setBillError(billAmount ? "" : "Can't be zero");
+            setPeopleError(peopleCount ? "" : "Can't be zero");
+            return;
         }
+    
+        let tipPercentage = customValue > 0 ? parseFloat(customValue) / 100 : parseFloat(tipRate) || 0;
+        let tip = billAmount * tipPercentage;
+        let tipPerPerson = tip / peopleCount;
+        let totalPerPerson = billAmount / peopleCount; // 🔥 Keep total per person     
+        let totalOverall =  tip + billAmount  
+    
         setCalculated({
-            totalAmount: Math.round(total *100)/100,
-            tipAmount: Math.round(tip * 100)/100,
-        })
-
-        setCustomValue('')
-
-        if(bill > 0){
-            setBillError("")
-        } else {
-            setBillError("Can't be Zero")
-        }
-
-        if(numberOfPeople > 0){
-            setPeopleError("")
-        } else {
-            setPeopleError("Can't be Zero")
-        }
-    }
+            tipAmount: Math.round(tipPerPerson * 100) / 100, // Split tip per person
+            totalAmount: Math.round(totalPerPerson * 100) / 100, // Keep total as billAmount
+            totalOverall: Math.round(totalOverall * 100) / 100
+        });
+    
+        setCustomValue("");
+        setBillError("");
+        setPeopleError("");
+    }    
+    
   return (
         
-        <form onSubmit={ (e) =>{handleSubmit(), e.preventDefault()}} className='h-auto w-[50%] flex flex-col justify-center items-center gap-y-10 m-10'>
+        <form onSubmit={ (e) =>{handleSubmit(), e.preventDefault()}}  aria-label="Tip Calculator" className='h-auto w-[50%] flex flex-col justify-center items-center gap-y-10 m-10'>
         <div className='w-full'>
             <MainInput  
                 label= 'Bill'
                 img= {dollarIcon}
+                alt='dollar sign'
                 setState = {setBill}
                 errorMessage = {handleSubmit}
                 error = {billError}
@@ -108,6 +105,7 @@ const Calculator = ({setCalculated}) => {
            <MainInput 
             label= 'Number of people'
             img={personIcon}
+            alt='person icon'
             setState={setNumberOfPeople}
             errorMessage = {handleSubmit}
             value = {numberOfPeople}

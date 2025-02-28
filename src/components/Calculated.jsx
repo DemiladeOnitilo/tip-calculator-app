@@ -5,12 +5,13 @@ import dollarIcon from '../assets/images/icon-dollar.svg'
 const Calculated = (calculated) => {
 
   return (
-    <form className='h-auto w-[50%] m-5 very-dark-cyan-bg rounded-2xl flex flex-col gap-y-24 p-8'>
+    <form className='h-auto w-[50%] m-5 very-dark-cyan-bg rounded-2xl flex flex-col gap-y-5 p-8'>
         <div className='flex flex-col items-center gap-y-5 p-3 '>
             <Total 
               name= 'Tip Amount'
               subname= '/ person'
               img= {dollarIcon}
+              alt='dollar sign'
               value= {calculated.calculated.tipAmount ? calculated.calculated.tipAmount : '0.00' } 
               
             />
@@ -19,7 +20,16 @@ const Calculated = (calculated) => {
               name= 'Total'
               subname= '/ person'
               img= {dollarIcon}
+              alt='dollar sign'
               value= {calculated.calculated.totalAmount ? calculated.calculated.totalAmount :'0.00' }
+            />
+
+            <Total 
+              name= 'Total'
+              subname= 'Overall'
+              img= {dollarIcon}
+              alt='dollar sign'
+              value= {calculated.calculated.totalOverall ? calculated.calculated.totalOverall :'0.00' }
             />
             
         </div>

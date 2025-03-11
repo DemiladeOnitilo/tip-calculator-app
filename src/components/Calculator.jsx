@@ -53,8 +53,8 @@ const Calculator = ({setCalculated}) => {
     
   return (
         
-        <form onSubmit={ (e) =>{handleSubmit(), e.preventDefault()}}  aria-label="Tip Calculator" className='h-auto w-[50%] flex flex-col justify-center items-center gap-y-10 m-10'>
-        <div className='w-full'>
+        <form onSubmit={ (e) =>{handleSubmit(), e.preventDefault()}}  aria-label="Tip Calculator" className='h-auto lg:w-[50%] flex flex-col justify-center items-center gap-y-5 lg:gap-y-10 m-10' >
+        <div className='w-[100%]'>
             <MainInput  
                 label= 'Bill'
                 img= {dollarIcon}
@@ -65,9 +65,9 @@ const Calculator = ({setCalculated}) => {
                 value = {bill}
             />
         </div>
-        <div className='flex flex-col gap-y-3' >
+        <div className='flex flex-col gap-y-3 w-[90%]' >
             <label className='dark-grayish-cyan'>Select Tip %</label>
-            <div className='grid grid-row-2 grid-cols-3 gap-4'>
+            <div className='lg:grid lg:grid-row-2 lg:grid-cols-3 lg:gap-4 grid grid-cols-2 gap-x-5 gap-y-4 w-full '>
                 <PercentageButton 
                     num= '5%'
                     value= '0.05'
@@ -101,7 +101,7 @@ const Calculator = ({setCalculated}) => {
                
             </div>
         </div>
-        <div className='w-full'>
+        <div className='w-[100%]'>
            <MainInput 
             label= 'Number of people'
             img={personIcon}

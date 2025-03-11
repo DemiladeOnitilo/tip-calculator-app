@@ -8,8 +8,8 @@ const PercentageButton = (props) => {
   }
 
   return (
-    <div>
-        <button type='submit' value={props.value} onClick={clicked} className='very-dark-cyan-bg text-white font-bold w-full h-10 rounded-md text-xl cursor-pointer '>{props.num}</button>
+    <div className='w-[100%]'>
+        <button type='submit' value={props.value} onClick={clicked} className='very-dark-cyan-bg text-white font-bold w-[100%] lg:w-full h-10 rounded-md text-xl cursor-pointer '>{props.num}</button>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Total = (props) => {
   return (
-    <div className='flex justify-between w-100 mt-2'>
+    <div className='flex justify-between items-center w-[80%] lg:w-[90%] mt-2 lg:mt-0'>
         <div>
             <h2 className='text-white'>{props.name}</h2>
             <p className='grayish-cyan text-sm'>{props.subname}</p>

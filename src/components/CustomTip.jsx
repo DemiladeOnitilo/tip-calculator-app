@@ -13,8 +13,8 @@ const CustomTip = (props) => {
     }
 
   return (
-    <div>
-        <input type="number"  placeholder='Custom'  value={props.value} onSubmit={onSubmit} onChange={onChange} className='cursor-pointer very-light-grayish-cyan-bg w-full h-10 text-center text-xl very-dark-cyan'/>
+    <div className='w-[100%]'>
+        <input type="number"  placeholder='Custom'  value={props.value} onSubmit={onSubmit} onChange={onChange} className='cursor-pointer very-light-grayish-cyan-bg w-[100%] lg:w-full h-10 text-center text-xl very-dark-cyan'/>
     </div>
   )
 }

@@ -5,8 +5,8 @@ import dollarIcon from '../assets/images/icon-dollar.svg'
 const Calculated = (calculated) => {
 
   return (
-    <form className='h-auto w-[50%] m-5 very-dark-cyan-bg rounded-2xl flex flex-col gap-y-5 p-8'>
-        <div className='flex flex-col items-center gap-y-5 p-3 '>
+    <form className='h-auto lg:w-[50%] m-5 very-dark-cyan-bg rounded-2xl flex flex-col gap-y-5 lg:gap-y-2 p-8'>
+        <div className='flex flex-col justify-center items-center gap-y-5 p-3 w-full'>
             <Total 
               name= 'Tip Amount'
               subname= '/ person'
